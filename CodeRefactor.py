@@ -8,9 +8,6 @@ this module will correct the syntax error of coding standards
 import inflection
 
 if __name__ == "__main__":
-    file_path = 'testfile.py'
-    FIRST_OBJ = FileCorrector(file_path)
-    print('initialise the class')
     with open('testfile.py', 'r') as read_fp:
         with open('test_correct.py', 'w') as write_fp:
             convert_case = True
@@ -23,7 +20,9 @@ if __name__ == "__main__":
                         wite_fp.write(rows)
                     elif "__main__" in rows:
                         convert_case = False
+                        write_fp.write(rows)
                     else:
-                        if conver_case:
+                        if convert_case:
                             write_fp.write(inflection.underscore(rows))
-            
+                        else:
+                            write_fp.write(inflection.underscore(rows).upper())
