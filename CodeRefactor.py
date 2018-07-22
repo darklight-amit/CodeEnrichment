@@ -3,7 +3,7 @@ this module will correct the syntax error of coding standards
 1. remove only trailing spaces
 2. Convert CamelCase to snake_case outside main
 3. Convert snake_case to SNAKE_CASE inside main
-4. It will change the attribure and methods name not the string
+4. It will change the attribute and methods name not the string
 """
 import inflection
 
