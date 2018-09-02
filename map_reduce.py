@@ -54,16 +54,29 @@ def line_mapper(main_list, reduced_list):
     @param list2:
     @type list2:
     """
+    clone_main = main_list[:]
     new_list = []
     for reduced_data in reduced_list:
         found = False
+        print('loop starts, reduced data ', reduced_data)
         for main_data in main_list:
             if main_data['contract'] == reduced_data['contract']:
+                try:
+                    clone_main.remove(main_data)
+                except ValueError:
+                    pass
                 main_data.update(reduced_data)
-                new_list.append(main_data)
-#                 main_list.remove(main_data)
+                a = main_data.copy()
+                print('pre new data', new_list)
+                new_list.append(a)
+                print('main data', main_data)
+                print('new data', new_list)
+                print('\n')
                 break
     
+    print('clone_main_list', clone_main)
+    for remaining_data in clone_main:
+        new_list.append(remaining_data)
     return new_list
 
 
