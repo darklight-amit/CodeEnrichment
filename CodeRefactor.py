@@ -7,6 +7,19 @@ this module will correct the syntax error of coding standards
 """
 import inflection
 
+
+def my_fun(a, b):
+    """
+    @param a:
+    @type a:
+    @param b:
+    @type b:
+    """
+    pas
+
+
+print(my_fun.__doc__)
+
 if __name__ == "__main__":
     with open('testfile.py', 'r') as read_fp:
         with open('test_correct.py', 'w') as write_fp:
@@ -26,3 +39,4 @@ if __name__ == "__main__":
                             write_fp.write(inflection.underscore(rows))
                         else:
                             write_fp.write(inflection.underscore(rows).upper())
+                        
