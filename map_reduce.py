@@ -48,6 +48,7 @@ def dict_reducer(list_dict):
 
 def line_mapper(main_list, reduced_list):
     """
+    new line mapper
     
     @param list1:
     @type list1:
